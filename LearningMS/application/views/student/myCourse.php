@@ -28,7 +28,7 @@
     <div class="overlay"></div>
     <div class="container">
         <nav>
-            <h1 class="brand"><a href="<?php echo base_url('LmsController/home'); ?>">LMS<span> </span>Portal</a></h1>
+            <h1 class="brand"><a href="<?php echo base_url('LmsController/home'); ?>">SLI<span>IT</span> LMS</a></h1>
             <ul>
                 <li><a href="<?php echo base_url('LmsController/home'); ?>">Home</a></li>
                 <li><a href="<?php echo base_url('LmsController/profile'); ?>">Profile</a></li>
@@ -55,6 +55,7 @@
                 echo '<div class="line-rows"><a id="'.$row->idz.'" onclick="courseworkClick(this);">'.$row->name.' - '.$row->course_id.'</a></div>
                       <br>';
             }?>
+			<a href="myCoursesPdf" class="btn btn-primary" >Generate My Courses PDF</a>
         </div>
     </div>
 
@@ -159,7 +160,7 @@
     window.onload = function(e){
         var x="<?php if(isset($_SESSION['success'])){ echo $_SESSION['success'];}?>";
         if("1"==x){
-            swal("Success!", "Your Change Successful!", "success");
+            showErrorMsg("Your Change Successful!");
             <?php $this->session->set_flashdata("success",null); ?>
         }
 
